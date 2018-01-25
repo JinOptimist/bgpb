@@ -15,7 +15,7 @@ namespace ForBGPB
 
         private int _lastUpdateWas = 0;
 
-        private static int _allBlockTop = 80;
+        private static int _allBlockTop = 36;
 
         public Form1()
         {
@@ -78,7 +78,7 @@ namespace ForBGPB
                     }
             }
 
-            UpdateListFile();
+            UpdateFolders();
             timer1.Start();
         }
 
@@ -86,7 +86,7 @@ namespace ForBGPB
         {
             if (_lastUpdateWas >= Settings.Default.TimeUpdate)
             {
-                UpdateListFile();
+                UpdateFolders();
             }
 
             _lastUpdateWas++;
@@ -95,7 +95,7 @@ namespace ForBGPB
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            UpdateListFile();
+            UpdateFolders();
         }
 
         private static TextBox CreateTxtBoxDir(int i)
@@ -122,13 +122,17 @@ namespace ForBGPB
             SubstringTextToLabel(labelDir, path);
 
             labelDir.Width = Settings.Default.WidthOneBlock;
-            labelDir.Top = _allBlockTop - 20;
+            labelDir.Top = _allBlockTop - 16;
             labelDir.Left = 10 + (Settings.Default.WidthOneBlock + 10) * i;
             return labelDir;
         }
 
         private static void SubstringTextToLabel(Control label, string text)
         {
+            if (text.Last() == '\\') {
+                text = text.Substring(0, text.Length - 1);
+            }
+
             var graphics = label.CreateGraphics();
             var measure = graphics.MeasureString(text, label.Font);
             var isSubstring = measure.Width > Settings.Default.WidthOneBlock;
@@ -146,7 +150,7 @@ namespace ForBGPB
                 return;
             }
 
-            while (measure.Width - 2 > Settings.Default.WidthOneBlock)
+            while (measure.Width + 2 > Settings.Default.WidthOneBlock)
             {
                 text = text.Substring(1);
                 txtResult = diskName + "..." + text;
@@ -156,7 +160,7 @@ namespace ForBGPB
             label.Text = txtResult;
         }
 
-        private void UpdateListFile()
+        private void UpdateFolders()
         {
             foreach (var block in _blockList)
             {
@@ -170,7 +174,7 @@ namespace ForBGPB
 
                 var newFileList = Directory.GetFiles(path);
                 
-                UpdateFileList(block, newFileList);
+                UpdateFiles(block, newFileList);
 
                 //var myFilePaths = new List<MyFilePath>(newFileList.Select(x => new MyFilePath(x)));
                 //SortFileList(myFilePaths);
@@ -195,7 +199,7 @@ namespace ForBGPB
             _lastUpdateWas = -1;
         }
 
-        private void UpdateFileList(DirBlock block, string[] filesInFolder)
+        private void UpdateFiles(DirBlock block, string[] filesInFolder)
         {
             if (block.FileList == null || !block.FileList.Any())
             {
@@ -243,7 +247,7 @@ namespace ForBGPB
 
         private void rdBtnSort1_Click(object sender, EventArgs e)
         {
-            UpdateListFile();
+            UpdateFolders();
         }
 
         private void rdBtnDirectTop_CheckedChanged(object sender, EventArgs e)
@@ -253,7 +257,12 @@ namespace ForBGPB
                 dirBlock.FileList.Reverse();
             }
 
-            UpdateListFile();
+            UpdateFolders();
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

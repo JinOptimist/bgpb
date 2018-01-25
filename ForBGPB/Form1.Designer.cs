@@ -37,6 +37,8 @@
             this.rdBtnSort3 = new System.Windows.Forms.RadioButton();
             this.rdBtnDirectTop = new System.Windows.Forms.RadioButton();
             this.rdBtnDirectBot = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
@@ -59,9 +61,10 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(3, 3);
+            this.btnUpdate.Location = new System.Drawing.Point(1, 1);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(1);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(112, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(112, 19);
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Обновить сейчас";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -70,10 +73,11 @@
             // rdBtnSort1
             // 
             this.rdBtnSort1.AutoSize = true;
-            this.rdBtnSort1.Location = new System.Drawing.Point(6, 19);
+            this.rdBtnSort1.Location = new System.Drawing.Point(0, 0);
             this.rdBtnSort1.Name = "rdBtnSort1";
             this.rdBtnSort1.Size = new System.Drawing.Size(121, 17);
             this.rdBtnSort1.TabIndex = 2;
+            this.rdBtnSort1.Tag = "";
             this.rdBtnSort1.Text = "Времени создания";
             this.rdBtnSort1.UseVisualStyleBackColor = true;
             this.rdBtnSort1.Click += new System.EventHandler(this.rdBtnSort1_Click);
@@ -81,10 +85,11 @@
             // rdBtnSort2
             // 
             this.rdBtnSort2.AutoSize = true;
-            this.rdBtnSort2.Location = new System.Drawing.Point(133, 19);
+            this.rdBtnSort2.Location = new System.Drawing.Point(122, 0);
             this.rdBtnSort2.Name = "rdBtnSort2";
             this.rdBtnSort2.Size = new System.Drawing.Size(167, 17);
             this.rdBtnSort2.TabIndex = 3;
+            this.rdBtnSort2.Tag = "";
             this.rdBtnSort2.Text = "Последний раз записывали";
             this.rdBtnSort2.UseVisualStyleBackColor = true;
             this.rdBtnSort2.Click += new System.EventHandler(this.rdBtnSort1_Click);
@@ -92,10 +97,11 @@
             // rdBtnSort3
             // 
             this.rdBtnSort3.AutoSize = true;
-            this.rdBtnSort3.Location = new System.Drawing.Point(306, 19);
+            this.rdBtnSort3.Location = new System.Drawing.Point(290, 0);
             this.rdBtnSort3.Name = "rdBtnSort3";
             this.rdBtnSort3.Size = new System.Drawing.Size(160, 17);
             this.rdBtnSort3.TabIndex = 5;
+            this.rdBtnSort3.Tag = "";
             this.rdBtnSort3.Text = "Последний раз открывали";
             this.rdBtnSort3.UseVisualStyleBackColor = true;
             this.rdBtnSort3.Click += new System.EventHandler(this.rdBtnSort1_Click);
@@ -105,7 +111,7 @@
             this.rdBtnDirectTop.AccessibleName = "";
             this.rdBtnDirectTop.AutoSize = true;
             this.rdBtnDirectTop.Checked = true;
-            this.rdBtnDirectTop.Location = new System.Drawing.Point(6, 19);
+            this.rdBtnDirectTop.Location = new System.Drawing.Point(0, 0);
             this.rdBtnDirectTop.Name = "rdBtnDirectTop";
             this.rdBtnDirectTop.Size = new System.Drawing.Size(60, 17);
             this.rdBtnDirectTop.TabIndex = 6;
@@ -119,7 +125,7 @@
             // 
             this.rdBtnDirectBot.AccessibleName = "";
             this.rdBtnDirectBot.AutoSize = true;
-            this.rdBtnDirectBot.Location = new System.Drawing.Point(72, 19);
+            this.rdBtnDirectBot.Location = new System.Drawing.Point(60, 0);
             this.rdBtnDirectBot.Name = "rdBtnDirectBot";
             this.rdBtnDirectBot.Size = new System.Drawing.Size(55, 17);
             this.rdBtnDirectBot.TabIndex = 8;
@@ -127,29 +133,46 @@
             this.rdBtnDirectBot.UseVisualStyleBackColor = true;
             this.rdBtnDirectBot.Click += new System.EventHandler(this.rdBtnSort1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(436, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Новые файлы:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(650, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Сортировать по:";
+            this.label2.Visible = false;
+            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rdBtnSort1);
-            this.groupBox1.Controls.Add(this.rdBtnSort2);
-            this.groupBox1.Controls.Add(this.rdBtnSort3);
-            this.groupBox1.Location = new System.Drawing.Point(573, 3);
+            this.groupBox1.Controls.Add(this.rdBtnDirectTop);
+            this.groupBox1.Controls.Add(this.rdBtnDirectBot);
+            this.groupBox1.Location = new System.Drawing.Point(520, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(472, 46);
-            this.groupBox1.TabIndex = 9;
+            this.groupBox1.Size = new System.Drawing.Size(115, 15);
+            this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Сортировать по";
-            this.groupBox1.Visible = false;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.rdBtnDirectTop);
-            this.groupBox2.Controls.Add(this.rdBtnDirectBot);
-            this.groupBox2.Location = new System.Drawing.Point(430, 3);
+            this.groupBox2.Controls.Add(this.rdBtnSort1);
+            this.groupBox2.Controls.Add(this.rdBtnSort3);
+            this.groupBox2.Controls.Add(this.rdBtnSort2);
+            this.groupBox2.Location = new System.Drawing.Point(746, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(137, 46);
-            this.groupBox2.TabIndex = 10;
+            this.groupBox2.Size = new System.Drawing.Size(445, 17);
+            this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Новые файлы:";
+            this.groupBox2.Visible = false;
             // 
             // Form1
             // 
@@ -158,6 +181,8 @@
             this.ClientSize = new System.Drawing.Size(1378, 435);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lblLastUpdate);
             this.Name = "Form1";
@@ -181,8 +206,10 @@
         private System.Windows.Forms.RadioButton rdBtnSort3;
         private System.Windows.Forms.RadioButton rdBtnDirectBot;
         private System.Windows.Forms.RadioButton rdBtnDirectTop;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        protected System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
