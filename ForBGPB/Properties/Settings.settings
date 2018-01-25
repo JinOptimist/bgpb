@@ -1,0 +1,53 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ForBGPB.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="LastUpdateMessange" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Последний раз список файлов обвноялся {0} секунд назад</Value>
+    </Setting>
+    <Setting Name="TimeUpdate" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="IsNumberLine" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FormName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Smile</Value>
+    </Setting>
+    <Setting Name="BgBlockColor" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">255, 255, 180</Value>
+    </Setting>
+    <Setting Name="WidthOneBlock" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">140</Value>
+    </Setting>
+    <Setting Name="HeightOneBlock" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">400</Value>
+    </Setting>
+    <Setting Name="FilesPath" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;D:\TRI&lt;/string&gt;
+  &lt;string&gt;c:\Users\Pavel_Lvou@epam.com\Documents\Visual Studio 2013\Projects\ForBGPB\ForBGPB\bin\Debug&lt;/string&gt;
+  &lt;string&gt;d:\tfs\&lt;/string&gt;
+  &lt;string&gt;d:\Lvov\&lt;/string&gt;
+  &lt;string&gt;D:\&lt;/string&gt;
+  &lt;string&gt;D:\TRI&lt;/string&gt;
+  &lt;string&gt;D:\TRI2&lt;/string&gt;
+  &lt;string&gt;D:\TRI&lt;/string&gt;
+  &lt;string&gt;d:\LostFolder\&lt;/string&gt;
+  &lt;string&gt;D:\TRI&lt;/string&gt;
+  &lt;string&gt;D:\TRI2&lt;/string&gt;
+  &lt;string&gt;d:\tfs\&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="ErrorPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Папка {0} не найдена. Возможно в пути ошибка</Value>
+    </Setting>
+    <Setting Name="SortType" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="SortDirect" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
